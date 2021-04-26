@@ -1,0 +1,119 @@
+{
+  "name": "pudding",
+  "version": "1.0.0",
+  "main": "./app/dist/main.dev.bundle.js",
+  "author": "hx-dl",
+  "description": "Electron",
+  "license": "MIT",
+  "scripts": {
+    "doc": "cross-env NODE_ENV=development node build/scripts/doc.js",
+    "start": "cross-env NODE_ENV=development node build/scripts/start.js",
+    "build": "cross-env NODE_ENV=production node build/scripts/build.js",
+    "analyze": "cross-env NODE_ENV=localAnalyze node build/scripts/build.js",
+    "release": "yarn build && node build/scripts/release.js",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "antd": "^4.10.1",
+    "axios": "^0.21.0",
+    "dayjs": "^1.9.6",
+    "electron-is": "^3.0.0",
+    "electron-log": "^4.3.1",
+    "fs-extra": "^9.0.1",
+    "mobx": "^6.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/md5": "^2.2.1",
+    "@types/node": "^14.14.11",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/styled-components": "^5.1.7",
+    "@types/webpack": "^4.41.25",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-loader": "^8.2.2",
+    "chokidar": "^3.5.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "commitizen": "^4.2.3",
+    "compressing": "^1.5.1",
+    "copy-webpack-plugin": "^8.1.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^2.0.0",
+    "cz-customizable": "^6.3.0",
+    "dumi": "^1.1.16",
+    "electron": "10.2.0",
+    "electron-builder": "^22.10.5",
+    "eslint": "^7.25.0",
+    "eslint-plugin-react": "^7.23.2",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.5",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
+    "lint-staged": "^10.5.4",
+    "md5": "^2.3.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "node-loader": "^2.0.0",
+    "ora": "^5.4.0",
+    "prettier": "^2.2.1",
+    "react-dev-utils": "^11.0.4",
+    "react-refresh": "^0.10.0",
+    "shebang-loader": "^0.0.1",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "thread-loader": "^3.0.3",
+    "tree-kill": "^1.2.2",
+    "typescript": "^4.2.4",
+    "wait-on": "^5.3.0",
+    "webpack": "^5.35.1",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3",
+    "webpackbar": "^5.0.0-3"
+  },
+  "engines": {
+    "node": ">=v12.16.3"
+  },
+  "prettierignore": [
+    "app/src/renderer/common/assets/**/*",
+    ".gitkeep"
+  ],
+  "prettier": {
+    "printWidth": 160,
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "app/src/**/*": [
+      "prettier --write",
+      "git add ."
+    ]
+  }
+}

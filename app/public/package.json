@@ -1,0 +1,54 @@
+{
+    "name": "pudding",
+    "version": "1.0.0",
+    "main": "./main.bundle.js",
+    "author": "hx-dl",
+    "description": "Electron",
+    "build": {
+        "appId": "com.xxx.pudding",
+        "productName": "PUDDING",
+        "copyright": "Copyright @ 2021 ${author}",
+        "asar": false,
+        "files": [
+            "**/*"
+        ],
+        "directories": {
+            "output": "../../release/installer"
+        },
+        "extends": null,
+        "mac": {
+            "icon": "../static/res/icon.png",
+            "category": "public.app-category.business",
+            "artifactName": "${productName}-${arch}.${ext}"
+        },
+        "dmg": {
+            "icon": "../static/res/icon.png",
+            "iconSize": 100
+        },
+        "win": {
+            "icon": "../static/res/icon.png",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "ia32"
+                    ]
+                }
+            ],
+            "artifactName": "${productName}-${arch}.${ext}"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
+        },
+        "electronDownload": {
+            "mirror": "https://npm.taobao.org/mirrors/electron/"
+        }
+    },
+    "devDependencies": {
+        "electron": "10.2.0"
+    }
+}
