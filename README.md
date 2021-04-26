@@ -4,26 +4,12 @@
 
 PUDDING 是一款基于 React + TypeScript + Webpack 搭建的 Electron 客户端脚手架。
 
-
 <div class="pic-plus">
   <img width="125" src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"/>
   <span>+</span>
   <img width="125" src="./docs/public/electron.png"/>
 </div>
-<style>
-  .pudding-logo{
-    vertical-align: bottom;
-  }
-  .pic-plus > * {
-    display: inline-block !important;
-    vertical-align: middle;
-  }
-  .pic-plus span {
-    margin: 0 20px;
-    color: #aaa;
-    font-size: 30px;
-  }
-</style>
+
 
 ## 特性
 
